@@ -1,0 +1,254 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fbfaf5;
+  font-weight: bold;
+  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  line-height: 2;
+}
+
+* ul {
+  list-style: none;
+}
+
+* a {
+  color: #fbfaf5;
+  text-decoration: none;
+}
+
+* header,
+* .img,
+* main,
+* footer {
+  width: 80%;
+  margin: 1rem 10%;
+}
+
+html {
+  background-image: url("../images/japanese-paper_00329.jpg");
+}
+
+header h1 {
+  font-family: "Ubuntu Mono", monospace;
+}
+
+header #hamburger_btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 200;
+  height: 64px;
+  width: 64px;
+}
+
+header #hamburger_btn div {
+  position: fixed;
+  right: calc(1rem + 12px);
+  height: 5px;
+  width: 40px;
+  border-radius: 2.5px;
+  background-color: #fbfaf5;
+}
+
+header #hamburger_btn :nth-of-type(1) {
+  top: calc(1rem + 21.5px);
+}
+
+header #hamburger_btn :nth-of-type(2) {
+  top: calc(1rem + 37.5px);
+}
+
+header #nav ul {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  display: block;
+  z-index: 100;
+  height: 100vh;
+  width: 100%;
+  padding: calc(2rem + 64px) 0;
+  background-image: url("../images/japanese-paper_00329.jpg");
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+header #nav ul li {
+  padding: calc((100vh - (4rem + 128px) - (32px * 5)) / 10) 0;
+}
+
+header #nav.active ul {
+  right: 0;
+}
+
+@media (min-width: 640px) {
+  header #hamburger_btn {
+    display: none;
+  }
+  header #nav ul {
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: auto;
+    padding: 0;
+    background-image: none;
+    -webkit-transition: 0s;
+    transition: 0s;
+  }
+  header #nav ul li {
+    padding: 0;
+    margin: 0 1rem;
+  }
+}
+
+.img {
+  height: 80vw;
+}
+
+.img img {
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 640px) {
+  .img {
+    height: 50vh;
+  }
+  .img img {
+    border-radius: 0 25vh 0 25vh;
+  }
+}
+
+main {
+  margin: 5% 10%;
+}
+
+main section {
+  margin: 5rem 0;
+}
+
+main section .mark {
+  height: 10px;
+  width: 10px;
+  margin: 1rem auto;
+  border-radius: 100%;
+  background: #fbfaf5;
+}
+
+#plan ul li {
+  margin-top: 1rem;
+}
+
+#plan ul li .plan_img {
+  height: 60vw;
+  width: 60vw;
+  margin: 0.5rem auto;
+}
+
+#plan ul li .plan_img img {
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation: rotation 5s linear infinite;
+          animation: rotation 5s linear infinite;
+}
+
+@-webkit-keyframes rotation {
+  0%,
+  100% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+
+@keyframes rotation {
+  0%,
+  100% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+
+#plan .more_info {
+  padding: 1.5rem 0;
+}
+
+#plan .more_info a {
+  padding: 1rem;
+  border: solid 5px #fbfaf5;
+  border-radius: 30px;
+}
+
+@media (min-width: 640px) {
+  #plan ul {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+  #plan ul li .plan_img {
+    height: 20vw;
+    width: 20vw;
+  }
+}
+
+#reservation .reservation_how {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#reservation .reservation_how div {
+  margin: 0 2rem;
+}
+
+#reservation .reservation_how div .reservation_img {
+  height: 50px;
+  width: 50px;
+  margin: 0.5rem auto;
+}
+
+#reservation .reservation_how div .reservation_img img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#reservation .reservation_how div p {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  #reservation .reservation_how div {
+    margin: 0 2rem;
+  }
+  #reservation .reservation_how div p {
+    display: block;
+  }
+}
+/*# sourceMappingURL=style.css.map */

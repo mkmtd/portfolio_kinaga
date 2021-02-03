@@ -1,0 +1,227 @@
+$text: #fbfaf5;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: $text;
+  font-weight: bold;
+  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  line-height: 2;
+  ul {
+    list-style: none;
+  }
+  a {
+    color: $text;
+    text-decoration: none;
+  }
+  header,
+  .img,
+  main,
+  footer {
+    width: 80%;
+    margin: 1rem 10%;
+  }
+}
+
+html {
+  background-image: url("../images/japanese-paper_00329.jpg");
+}
+
+header {
+  h1 {
+    font-family: "Ubuntu Mono", monospace;
+  }
+  #hamburger_btn {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 200;
+    height: 64px;
+    width: 64px;
+    div {
+      position: fixed;
+      right: calc(1rem + 12px);
+      height: 5px;
+      width: 40px;
+      border-radius: 2.5px;
+      background-color: $text;
+    }
+    :nth-of-type(1) {
+      top: calc(1rem + 21.5px);
+    }
+    :nth-of-type(2) {
+      top: calc(1rem + 37.5px);
+    }
+  }
+  #nav {
+    ul {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      display: block;
+      z-index: 100;
+      height: 100vh;
+      width: 100%;
+      padding: calc(2rem + 64px) 0;
+      background-image: url("../images/japanese-paper_00329.jpg");
+      transition: 1s ease-in-out;
+      li {
+        padding: calc((100vh - (4rem + 128px) - (32px * 5)) / 10) 0;
+      }
+    }
+    &.active {
+      ul {
+        right: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  header {
+    #hamburger_btn {
+      display: none;
+    }
+    #nav {
+      ul {
+        position: static;
+        display: flex;
+        justify-content: center;
+        height: auto;
+        padding: 0;
+        background-image: none;
+        transition: 0s;
+        li {
+          padding: 0;
+          margin: 0 1rem;
+        }
+      }
+    }
+  }
+}
+
+.img {
+  height: 80vw;
+  img {
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 640px) {
+  .img {
+    height: 50vh;
+    img {
+      border-radius: 0 25vh 0 25vh;
+    }
+  }
+}
+
+main {
+  margin: 5% 10%;
+  section {
+    margin: 5rem 0;
+    .mark {
+      height: 10px;
+      width: 10px;
+      margin: 1rem auto;
+      border-radius: 100%;
+      background: $text;
+    }
+  }
+}
+
+#plan {
+  ul {
+    li {
+      margin-top: 1rem;
+      .plan_img {
+        height: 60vw;
+        width: 60vw;
+        margin: 0.5rem auto;
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 100%;
+          object-fit: cover;
+          animation: rotation 5s linear infinite;
+          @keyframes rotation {
+            0%,
+            100% {
+              transform: rotate(-10deg);
+            }
+            50% {
+              transform: rotate(10deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  .more_info {
+    padding: 1.5rem 0;
+    a {
+      padding: 1rem;
+      border: solid 5px $text;
+      border-radius: 30px;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  #plan {
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      li {
+        .plan_img {
+          height: 20vw;
+          width: 20vw;
+        }
+      }
+    }
+  }
+}
+
+#reservation {
+  .reservation_how {
+    display: flex;
+    justify-content: center;
+    div {
+      margin: 0 2rem;
+      .reservation_img {
+        height: 50px;
+        width: 50px;
+        margin: 0.5rem auto;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+      p {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  #reservation {
+    .reservation_how {
+      div {
+        margin: 0 2rem;
+        p {
+          display: block;
+        }
+      }
+    }
+  }
+}
